@@ -1,11 +1,3 @@
-# ACIT 4630: Information Assurance and Security Labs
-
-This repository contains lab exercises for BCIT's ACIT 4630 Information Assurance and Security 
-course. The labs provide a practical foundation in information security, covering a range of 
-essential topics and tools to help secure systems on a LAN. Students will explore 
-vulnerability scanning, cryptography, incident response, and various network attack 
-simulations.
-
 ## Labs Index:
 
 - [Setup Kali and Metasploitable](Setup_Kali_and_Metasploitable.md)
