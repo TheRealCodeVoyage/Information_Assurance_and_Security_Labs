@@ -26,11 +26,11 @@ Note For Apple Machines with M series:
 Note for MacOS with M series Chip:
 1. Download and Install the HomeBrew
 2. InstallQEMU
-    ```zsh
+    ```sh
     brew install qemu
     ```
 3.	Convert the .vdmk file to .QCOW2 (QEMU Image)
-    ```zsh
+    ```sh
     qemu-img convert -f vmdk -O qcow2 vmName.vmdk vmName.qcow2
     ```
 4.	Load the .QCOW2 file to UTM App
@@ -58,14 +58,20 @@ Note for Windows 11 Users using VirtualBox:
         - The server is live on the internet, and ready for you to probe even though running above command might tell you differently.
 
 ### Prep for Lab 2:
-Please run following commands (with sudo) on your Kali VM before the Week 2 class
-```zsh
+Please install the OpenVAS software on you Kali VM before the week 2 class.
+```sh
 ??? needs update
 
-apt-get update
-apt-get dist-upgrade
-apt-get install openvas
-gvm-setup ## (This command might be mentioned as openvas-setup in older resources. It needs to be run only the first time - and it will take a while. Take a note of the password for admin user when this is done)
+sudo apt update
+sudo apt upgrade -y
+sudo apt dist-upgrade -y
+
+sudo apt install openvas
+
+sudo gvm-setup
+
+gvm-check-setup
+
 ```
 
 ### Submission For Lab 1:
