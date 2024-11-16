@@ -7,7 +7,7 @@ You may optionally work with a partner for the labs in this course. Make sure yo
 Note For Apple Machines with M series:
 - Instead of Virtual Machine you must use of of below options:
     - Download the UTM App
-        - [UTM | Virtual machines for Mac (getutm.app)](https://getutm.app/)
+        - [UTM, Virtual machines for Mac](https://getutm.app/)
     - Download VMware Fusion Pro
         - [Link](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html)
 
