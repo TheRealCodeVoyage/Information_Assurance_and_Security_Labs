@@ -1,3 +1,10 @@
 theme: jekyll-theme-slate
 title: "I.A.S. Labs" # Leave title empty to hide repo name
 description: "" # Leave description empty to hide description
+
+plugins:
+  - jekyll-clipboard
+
+clipboard:
+  button_text: "Copy Code" # Customize the button text
+  success_text: "Copied!" # Message after successful copy
