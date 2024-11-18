@@ -113,3 +113,7 @@ Run `dig www.bcit.ca` on the user machine to trigger the sniff and spoof code.
 - Q20. Will you get a spoofed response if you query the IP for www.google.com? Why?
 
 Parts of the instructions are copied from [DNS Local Lab by seedsecuritylabs.org](https://seedsecuritylabs.org/Labs_20.04/Files/DNS_Local/DNS_Local.pdf)
+
+### Submission For Lab 11:
+- Create a report with the screenshots and answer any questions in the lab above.
+- Submit your report to the Learning Hub in PDF format.
