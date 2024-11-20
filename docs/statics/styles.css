@@ -13,17 +13,14 @@
 #home_banner{
     display: block;
     position: fixed;
-    top:0;
+    top: 0;
     left: 10px;
+    height: 42px;
     z-index: 10;
-    padding: 5px;
-    color: #fff;
-    font-weight: 700;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    background: #0091ff;
 }
 #home_banner > img{
     width: 20px;
     height: 20px;
+    margin: 0;
 }
