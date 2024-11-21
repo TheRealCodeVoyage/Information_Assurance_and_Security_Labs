@@ -23,6 +23,9 @@
     margin: 0;
 }
 
-footer > img {
+#yt-footer > img {
     box-shadow: none;
+}
+#yt-footer > a {
+    text-decoration: none;
 }
