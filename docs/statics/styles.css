@@ -1,26 +1,24 @@
 .copy-button {
-    background-color: #4CAF50;
+    background-color: #0091ff;
     color: white;
     border: none;
     border-radius: 3px;
-    padding: 5px 10px;
-    font-size: 0.8em;
+    padding: 5px;
+    font-size: 1em;
     cursor: pointer;
 }
 .copy-button:hover {
-    background-color: #45a049;
+    background-color: #0091ff;
 }
 #home_banner{
     display: block;
     position: fixed;
     top: 0;
     left: 10px;
-    height: 42px;
+    height: 36px;
     z-index: 10;
     background: #0091ff;
 }
 #home_banner > img{
-    width: 30px;
-    height: 30px;
     margin: 0;
 }
