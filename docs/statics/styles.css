@@ -22,3 +22,7 @@
 #home_banner > img{
     margin: 0;
 }
+
+footer > img {
+    box-shadow: none;
+}
