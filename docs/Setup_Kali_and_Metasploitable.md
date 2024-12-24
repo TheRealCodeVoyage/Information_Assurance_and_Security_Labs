@@ -17,6 +17,22 @@ Note For Apple Machines with M series:
 - Login to the VM. username: kali password: kali
 - Explore different tools on Kali Linux.
 - (Q1) How can you find this machine's IP?
+- Change your Kali machine's hostname to a name unique to you:
+
+```sh
+hostnamectl hostname for-example-iman-a
+```
+Also you should replace the exact same name which you just chose as your hostname in `/etc/hosts/ file with `kali`
+
+```sh
+sudo nano /etc/hosts
+```
+
+```plaintext
+127.0.0.1       localhost
+127.0.1.1       for-example-iman-a
+```
+
 - Find Metasploit (https://www.offensive- security.com/metasploitunleashed/introduction/) and run it from the Applications menu. You should see msfconsole open. Almost all of your interaction with Metasploit will be through its many modules, which we explore more next week.
 
 **Metasploitable 2**, is an intentionally vulnerable Ubuntu (64-bit) Linux virtual machine that is designed for testing common vulnerabilities.
@@ -26,10 +42,12 @@ Note For Apple Machines with M series:
 Note for MacOS with M series Chip:
 1. Download and Install the HomeBrew
 2. InstallQEMU
+
     ```sh
     brew install qemu
     ```
 3.	Convert the .vdmk file to .QCOW2 (QEMU Image)
+
     ```sh
     qemu-img convert -f vmdk -O qcow2 vmName.vmdk vmName.qcow2
     ```
@@ -39,6 +57,7 @@ Note for Windows 11 Users using VirtualBox:
 -	You might face a Kernel Panic with Metasploitable 2; here are steps for workaround:
     -	Turn of the MetaSploitable 2 VM machine
     -	Run below commands in the PowerShell:
+
         ```powershell
         vboxmanage modifyvm <uuid|vmname> --acpi off
         vboxmanage modifyvm <uuid|vmname> --ioapic off
@@ -59,19 +78,67 @@ Note for Windows 11 Users using VirtualBox:
 
 ### Prep for Lab 2:
 Please install the OpenVAS software on you Kali VM before the week 2 class.
-```sh
-??? needs update
 
+```sh
 sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
-
-sudo apt install openvas
-
+sudo apt install openvas -y
 sudo gvm-setup
+```
+It will take a while to gather and download all the information.
 
+**Note**: Make sure to take a note of the password generated in the terminal.
+
+If there installation was successfull, run:
+
+```sh
 gvm-check-setup
+```
+#### Unsuccessful Installation? Troubleshooting
+If you have encounter such error:
 
+```sh
+[>] Starting PostgreSQL service
+[-] ERROR: The default PostgreSQL version (16) is not 17 that is required by libgvmd
+[-] ERROR: libgvmd needs PostgreSQL 17 to use the port 5432
+[-] ERROR: Use pg_upgradecluster to update your PostgreSQL cluster
+```
+
+It means you have 2 version of postgreSQL and the older version is using port 5432.
+
+1. To make sure of our assumption you can run the command below and confirm
+
+```sh
+pg_lsclusters
+```
+
+2. we can simple delete the older version and change the latest version's port to `5432`:
+
+```sh
+sudo apt remove --purge postgresql-16
+sudo apt autoremove
+sudo service postgresql stop
+```
+
+3. We just stoped the PostgreSQL service. now we can edit its config:
+
+```sh
+sudo nano /etc/postgresql/17/main/postgresql.conf
+```
+
+4. In `nano` you can search a word with `CTRL + W`. let's search for the word `port` and change it to `5432`.
+
+5. After we Saved (`CTRL + S`) and Exited (`CTRL + X`), we need to restart the PostgreSQL service:
+
+```sh
+sudo systemctl start postgresql
+```
+
+6. Now, it's time to re-run the openvas installation command:
+
+```sh
+sudo gvm-setup
 ```
 
 ### Submission For Lab 1:
