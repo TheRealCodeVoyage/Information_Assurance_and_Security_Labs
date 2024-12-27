@@ -1,4 +1,4 @@
-# ACIT 4630 – Lab 10 – DNS Spoofing
+# ACIT 4630 – Lab 11 – DNS Spoofing
 
 Please download and unzip Lab setup files in your SEED VM: 
 

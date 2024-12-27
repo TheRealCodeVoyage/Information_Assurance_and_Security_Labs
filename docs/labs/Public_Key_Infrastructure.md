@@ -88,7 +88,7 @@ Use the following command to print out the X509 certificate issued for our webse
 ### Task 4: Deploying Certificate in an Apache-Based HTTPS Website 
 In this task, we will explore how public-key certificates are utilized by websites to secure web browsing. We will set up an HTTPS website using Nginx, which is installed directly on Kali Linux. To create an HTTPS website, we need to configure Nginx to specify the locations of the private key and certificate.
 
-Container Setup and Commands. Please **download**, unzip, and enter the [Labsetup](files/Labsetup-PKI.zip), and use the `docker-compose.yml` file to set up the lab environment. Navigate to `image_www` directory and do the following:
+Container Setup and Commands. Please **download**, unzip, and enter the [Labsetup](../files/Labsetup-PKI.zip), and use the `docker-compose.yml` file to set up the lab environment. Navigate to `image_www` directory and do the following:
 - Copy your webserver's key and certificate (originated in Task 3 and 4) to the cert directory.
 - Update the `mywebsite_apache_ssl.conf` and add your webserver domains and alternate names (to `ServerName` and `ServerAlias`) in both `:443` and `:80` entries.
 - **Note**: The SSLEngine, SSLCertificateFile, SSLCertificateKeyFile directives don't mean

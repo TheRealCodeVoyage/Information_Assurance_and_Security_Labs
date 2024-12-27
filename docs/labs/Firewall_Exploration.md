@@ -1,7 +1,7 @@
 # ACIT 4630 – Lab 8 – Firewall Exploration
 
 ## Instructions: 
-Please download and unzip [Labsetup-Firewall](files/Labsetup-Firewall.zip) files in your SEED VM or Kali VM.
+Please download and unzip [Labsetup-Firewall](../files/Labsetup-Firewall.zip) files in your SEED VM or Kali VM.
 
 Now navigate to the folder containing the `docker-compser.yml` file and run the following command: 
 ```sh

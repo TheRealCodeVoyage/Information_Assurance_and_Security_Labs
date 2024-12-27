@@ -3,7 +3,7 @@
 ## Instructions: 
 Please download and unzip Lab setup files into your SEED VM (or Kali VM): 
 
-[Labsetup-Lab-9.zip](files/Labsetup-lab-9.zip) 
+[Labsetup-Lab-9.zip](../files/Labsetup-lab-9.zip) 
 
 Navigate to the folder containing the `docker-compose.yml` file and run the 
 following command: 
