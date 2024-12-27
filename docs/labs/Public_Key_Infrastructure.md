@@ -131,7 +131,7 @@ Redirect permanent / https://<yourdomain>.com
 
 In this task, we will demonstrate how PKI can prevent Man-In-The-Middle (MITM) attacks. Assume Alice wants to visit `imananoosheh2025.info` via HTTPS. She needs to get the public key from the `imananoosheh2025.info` server. If an attacker can intercept the communication between Alice and the server, the attacker can replace the server’s public key with its own public key. Therefore, Alice’s secret is encrypted with the attacker’s public key, so the attacker will be able to read the secret. The attacker can forward the secret to the server using the server’s public key. The secret is used to encrypt the communication between Alice and server, so the attacker can decrypt the encrypted communication.
 
-![MIMT Attack](images/lab6-fig1.png)
+![MIMT Attack](../images/lab6-fig1.png)
 
 In this task, we will emulate an MITM attack and observe how PKI can counteract it. We will select a target website first. In this document, we will use www.`imananoosheh2025.info` as the target.
 In Task 4, we have already set up an HTTPS website. To impersonate www.`imananoosheh2025.info`, follow these steps:

@@ -16,7 +16,7 @@ Type `openssl enc --help` on the terminal to see how you should use this command
 Answer the following questions:
 - Q1. Note the name of the algorithm. What does each part refer to (aes, 128, cbc)?
     - Watch this [YouTube Video](https://www.youtube.com/watch?v=0D7OwYp6ZEc) to understand what CBC mode is 
-    ![CBC Mode Encryption](images/lab5-fig-1.png)
+    ![CBC Mode Encryption](../images/lab5-fig-1.png)
 - Q2. What is the plaintext of the message?
 - Q3. Is the provided key part of a key pair?
 - Q4. Should this key be shared publicly?

@@ -6,7 +6,7 @@ Please download and unzip Lab setup files in your SEED VM:
 
 Navigate to the folder where the `docker-compose.yml` file is and run `docker-compose up -d` to set up these machines:
 
-![Network Schema](images/lab10-fig1.jpg)
+![Network Schema](../images/lab10-fig1.jpg)
 
 - [BIND 9](https://bind9.net/) DNS server program is installed on the local DNS server.
 - DNSSEC is introduced to protect against spoofing attacks on DNS servers. Since we want to demonstrate how these attacks affect a victim machine, we have turned DNSSEC off on the local DNS Server. Please verify this setting in `/etc/bind/named.conf.options` file
@@ -65,7 +65,7 @@ The main objective of DNS spoofing attacks is to redirect the user to another ma
 
 **Note**: The attacks conducted in this lab assume that the attacker is on the same local network, and can thus sniff the DNS packets. This assumption is made to simplify the lab tasks.
 
-![DNS Attack Schema Figure](images/lab10-fig2.png)
+![DNS Attack Schema Figure](../images/lab10-fig2.png)
 
 ### Task 3a: Directly Spoofing Response to the User (attack at point 2)
 

@@ -3,7 +3,7 @@
 ## Instructions: 
 When visiting a website, your browser does the verification of the website's public certificate. To better understand the process, we'll do manual verification of the certificate that www.bcit.ca provides. To verify a certificate, we need to verify the Certificate Authority's (CA) signature on it. To verify a digital signature, we need the signer's public key to decrypt the provided signature and compare it with the hash of the signed document. 
 
-![Digital Signature Verification](images/lab7-fig1.png)
+![Digital Signature Verification](../images/lab7-fig1.png)
 
 Recommended VM is SEED VM but if you want to use any other VM such as Kali, make sure you have OpenSSL installed.
 ```sh

@@ -9,19 +9,19 @@ docker-compose up -d
 ```
 to setup these machines: 
 
-![Network Schema](images/lab8-fig1.png)
+![Network Schema](../images/lab8-fig1.png)
 
 - 192.168.60.0/24 network is our internal network
 - 10.9.0.0./24 acts as the external network
 
 Note: Since we will be running multiple containers, feel free to use bash_alias to code shorter commands. Some examples:
 
-![Bash Alias Example](images/lab8-fig2.png)
-![Bash Alias Example Usage](images/lab8-fig3.png)
+![Bash Alias Example](../images/lab8-fig2.png)
+![Bash Alias Example Usage](../images/lab8-fig3.png)
 
 You may also eb able to rename your Terminal Tabs to easily find the container you want to use:
 
-![Rename Terminal Tab](images/lab8-fig4.png)
+![Rename Terminal Tab](../images/lab8-fig4.png)
 
 _For each part below, take screenshots of your code snippets and important results and explain what you see._
  
@@ -110,7 +110,7 @@ Find `DEFAULT_FORWARD_POLICY` key in `/etc/default/ufw` file and change the valu
 
 Next, you need to add the masquerade rule for the POSTROUTING chain (chain is a series of rules) in the nat table
 
-![IP Table Schema](images/lab8-fig5.png)
+![IP Table Schema](../images/lab8-fig5.png)
 
 - We can't use ufw command line to add this rule, so we will edit
 the `/etc/ufw/before.rules` file. The default rules in .rules files only configure the filter table, and to enable masquerading the nat table will need to be configured. Add the following to the top of the file just after the header comments:

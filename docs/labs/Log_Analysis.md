@@ -14,7 +14,7 @@ Let's explore what kind of logs exist on the Metasploitable2 machine.
         - Search for substring "failure" in this file to see the log associated with our unsuccessful login.
 - (Q4) You might see some zipped files in the log folder (e.g. dmesg.1.gz,... in the following screenshot), the log rotation process generates these files.
     - What’s the purpose of log rotation? 
-    ![Log Rotation](images/lab4-fig-1.png)
+    ![Log Rotation](../images/lab4-fig-1.png)
 
 - To see the configurations for creating these different versions of a log file, see the content of this file: /etc/logrotate.conf
     - (Q5) How often are logs rotated?
@@ -35,7 +35,7 @@ This is writing a blank space to the file
 - Go back to Metasploitable 2 and examine the content of access.log.
     - (Q8) What command gives you the number of log entries (lines) in this file? 
     - (Q9) Take a screenshot of the logs and identify different parts of the log entries using this table: (you'll see a hyphen - for any missing data) 
-    ![Log Entry Table](images/lab4-fig-2.jpg)
+    ![Log Entry Table](../images/lab4-fig-2.jpg)
 
 - Navigate to different options listed on the webpage (on Kali) and verify the log entries associated with it in access.log (on Metasploitable2) 
 - Now let's generate some unhealthy traffic! On the Kali machine. Download and install [ZAP application](https://www.zaproxy.org/getting-started/) (Linux Installer). You need to set execute permission on the downloaded script.

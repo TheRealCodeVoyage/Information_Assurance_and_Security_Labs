@@ -67,7 +67,7 @@ Note for Windows 11 Users using VirtualBox:
 -	(Q2) How can you find this machine's IP?
     - Note: If you're getting the same IP as the Kali Linux machine you need to change the network to a NAT network
 -	(Q3) Get yourself familiar with nmap command and its different options. How can you find this machine's OS as well as the services and their software versions running on open ports on this machine from your Kali VM?
--	![nmap-cheatsheet.jpg](images/nmap-cheatsheet.jpg)
+-	![nmap-cheatsheet.jpg](../images/nmap-cheatsheet.jpg)
 -	https://nmap.org/book/man.html
 -	[Nmap Tutorial to find Network Vulnerabilities (YouTube)](https://youtu.be/4t4kBkMsDbQ?si=EtiqpWknYs2GBDH_)
 -	[Introduction to NMAP for Beginners! (YouTube)](https://youtu.be/NYgDzO8iQJ0?si=NcbmoceDVjTYUAM8)

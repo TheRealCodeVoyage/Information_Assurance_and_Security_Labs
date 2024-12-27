@@ -12,7 +12,7 @@ docker-compose up -d
 ```
 to setup these machines: 
 
-![Lab 9 Network Setup](images/lab9-fig1.png)
+![Lab 9 Network Setup](../images/lab9-fig1.png)
 
 All the codes needed in the following tasks are provided in the volumes folder in the Lab setup folder. All attacks are done from the attacker's machine. 
 
@@ -87,7 +87,7 @@ The vulnerabilities in the TCP/IP protocols represent a special genre of vulnera
 
 In this attack, the attacker machine is going to send many SYN requests to a victim’s telnet port (with no intention to finish the 3-way handshake procedure) to fill out the victim's queue (associated with telnet) for half-open connections: 
 
-![TCP 3-Way Handshake](images/lab9-fig2.png)![SYN Flood Attack](images/lab9-fig3.png)
+![TCP 3-Way Handshake](../images/lab9-fig2.png)![SYN Flood Attack](../images/lab9-fig3.png)
 
 The size of the queue has a system-wide setting. In Ubuntu OSes, we can check the setting using the following command: 
 ```sh

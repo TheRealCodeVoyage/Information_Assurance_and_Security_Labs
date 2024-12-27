@@ -8,17 +8,24 @@ simulations.
 
 ## Labs Index:
 
-- [Setup Kali and Metasploitable](./Setup_Kali_and_Metasploitable.md)
-- [Vulnerability Scanning](./Vulnerability_Scanning.md)
-- [Exploit Metasploitable](./Exploit_Metasploitable.md)
-- [Log Analysis](./Log_Analysis.md)
-- [Cryptography](./Cryptography.md)
-- [Public Key Infrastructure](./Public_Key_Infrastructure.md)
-- [Password Cracking](./Password_Cracking.md)
-- [Manually Verifying X.509 Certificate](./Manually_Verifying_X509_Certificate.md)
-- [Firewall Exploration](./Firewall_Exploration.md)
-- [Sniffing and Spoofing](./Sniffing_and_Spoofing.md)
-- [DNS Spoofing](./DNS_Spoofing.md)
+- [Lab 1: Setup Kali and Metasploitable](./labs/Setup_Kali_and_Metasploitable.md)
+- [Lab 2: Vulnerability Scanning](./labs/Vulnerability_Scanning.md)
+- [Lab 3: Exploit Metasploitable](./labs/Exploit_Metasploitable.md)
+- [Lab 4: Log Analysis](./labs/Log_Analysis.md)
+- [Lab 5: Cryptography](./labs/Cryptography.md)
+- [Lab 6: Public Key Infrastructure](./labs/Public_Key_Infrastructure.md)
+- [Lab 7: Password Cracking](./labs/Password_Cracking.md)
+- [Lab 8: Manually Verifying X.509 Certificate](./labs/Manually_Verifying_X509_Certificate.md)
+- [Lab 9: Firewall Exploration](./labs/Firewall_Exploration.md)
+- [Lab 10: Sniffing and Spoofing](./labs/Sniffing_and_Spoofing.md)
+- [Lab 11: DNS Spoofing](./labs/DNS_Spoofing.md)
+
+## Assignments Index:
+
+- [Assignment 1 – Keep Secrets Secret!](assignments/Assignment_1_Keep_Secrets_Secret.md)
+- [Assignment 2 – MD5 Collision Attack](assignments/Assignment_2_MD5_Collision_Attack.md)
+- [Assignment 3 – Transport Layer Security](assignments/Assignment_3_Transport_Layer_Security)
+- [Assignment 4 – TCP RST and Session Hijacking Attacks](assignments/Assignment_4_TCP_RST_and_Session_Hijacking_Attacks.md)
 
 
 ## Course Overview
