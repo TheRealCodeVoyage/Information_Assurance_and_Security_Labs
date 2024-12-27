@@ -1,7 +1,7 @@
 # ACIT 4630 – Lab 1 – Setup Kali Linux and Metasplotable 2
 
 ### Note: 
-You may optionally work with a partner for the labs in this course. Make sure you submit your own-written report of your lab, since the lab submission is individual.
+You may optionally work with a partner for the labs in this course. Make sure you submit your **own-written** report of your lab, since the lab submission is **individual**.
 
 
 Note For Apple Machines with M series:
@@ -22,7 +22,7 @@ Note For Apple Machines with M series:
 ```sh
 hostnamectl hostname for-example-iman-a
 ```
-Also you should replace the exact same name which you just chose as your hostname in `/etc/hosts/ file with `kali`
+Also you should replace the exact same name which you just chose as your hostname in `/etc/hosts/` file with `kali`
 
 ```sh
 sudo nano /etc/hosts
@@ -76,70 +76,7 @@ Note for Windows 11 Users using VirtualBox:
     - Hint: try nmap google.com
         - The server is live on the internet, and ready for you to probe even though running above command might tell you differently.
 
-### Prep for Lab 2:
-Please install the OpenVAS software on you Kali VM before the week 2 class.
 
-```sh
-sudo apt update
-sudo apt upgrade -y
-sudo apt dist-upgrade -y
-sudo apt install openvas -y
-sudo gvm-setup
-```
-It will take a while to gather and download all the information.
-
-**Note**: Make sure to take a note of the password generated in the terminal.
-
-If there installation was successfull, run:
-
-```sh
-gvm-check-setup
-```
-#### Unsuccessful Installation? Troubleshooting
-If you have encounter such error:
-
-```sh
-[>] Starting PostgreSQL service
-[-] ERROR: The default PostgreSQL version (16) is not 17 that is required by libgvmd
-[-] ERROR: libgvmd needs PostgreSQL 17 to use the port 5432
-[-] ERROR: Use pg_upgradecluster to update your PostgreSQL cluster
-```
-
-It means you have 2 version of postgreSQL and the older version is using port 5432.
-
-1. To make sure of our assumption you can run the command below and confirm
-
-```sh
-pg_lsclusters
-```
-
-2. we can simple delete the older version and change the latest version's port to `5432`:
-
-```sh
-sudo apt remove --purge postgresql-16
-sudo apt autoremove
-sudo service postgresql stop
-```
-
-3. We just stoped the PostgreSQL service. now we can edit its config:
-
-```sh
-sudo nano /etc/postgresql/17/main/postgresql.conf
-```
-
-4. In `nano` you can search a word with `CTRL + W`. let's search for the word `port` and change it to `5432`.
-
-5. After we Saved (`CTRL + S`) and Exited (`CTRL + X`), we need to restart the PostgreSQL service:
-
-```sh
-sudo systemctl start postgresql
-```
-
-6. Now, it's time to re-run the openvas installation command:
-
-```sh
-sudo gvm-setup
-```
 
 ### Submission For Lab 1:
 - Demonstrate your running VMs above to your instructor.
