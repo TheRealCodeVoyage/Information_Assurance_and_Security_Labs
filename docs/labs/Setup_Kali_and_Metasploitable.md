@@ -12,7 +12,8 @@ Note For Apple Machines with M series:
         - [Link](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html)
 
 ### Instructions
-**Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. Download a VM image for Kali Linux and set up a VM machine for it https://www.kali.org/get-kali/#kali-virtual-machines
+**Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
+
 - Make sure the VM's network is a NAT network
 - Login to the VM. username: kali password: kali
 - Explore different tools on Kali Linux.
@@ -33,11 +34,11 @@ sudo nano /etc/hosts
 127.0.1.1       for-example-iman-a
 ```
 
-- Find Metasploit (https://www.offensive- security.com/metasploitunleashed/introduction/) and run it from the Applications menu. You should see msfconsole open. Almost all of your interaction with Metasploit will be through its many modules, which we explore more next week.
+- Find Metasploit [(Doc page)](https://www.offsec.com/metasploit-unleashed/introduction/) and run it from the Applications menu. You should see `msfconsole` open. Almost all of your interaction with Metasploit will be through its many modules, which we explore more next week.
 
 **Metasploitable 2**, is an intentionally vulnerable Ubuntu (64-bit) Linux virtual machine that is designed for testing common vulnerabilities.
 - Download a VM image for metasploitable 2 and set up a VM machine for it
-- https://sourceforge.net/projects/metasploitable/
+- (https://sourceforge.net/projects/metasploitable/)[https://sourceforge.net/projects/metasploitable/]
 
 Note for MacOS with M series Chip:
 1. Download and Install the HomeBrew
@@ -46,11 +47,13 @@ Note for MacOS with M series Chip:
     ```sh
     brew install qemu
     ```
+
 3.	Convert the .vdmk file to .QCOW2 (QEMU Image)
 
     ```sh
     qemu-img convert -f vmdk -O qcow2 vmName.vmdk vmName.qcow2
     ```
+    
 4.	Load the .QCOW2 file to UTM App
 
 Note for Windows 11 Users using VirtualBox:
