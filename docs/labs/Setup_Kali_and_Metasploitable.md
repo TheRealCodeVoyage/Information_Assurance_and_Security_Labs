@@ -66,7 +66,7 @@ Note for Windows 11 Users using VirtualBox:
         vboxmanage modifyvm <uuid|vmname> --ioapic off
         ```
 -	Make sure the VM's network is the same NAT network as Kali VM's
--	Login to the VM. username: msfadmin, password: msfadmin
+-	Login to the VM. username: `msfadmin`, password: `msfadmin`
 -	(Q2) How can you find this machine's IP?
     - Note: If you're getting the same IP as the Kali Linux machine you need to change the network to a NAT network
 -	(Q3) Get yourself familiar with nmap command and its different options. How can you find this machine's OS as well as the services and their software versions running on open ports on this machine from your Kali VM?
@@ -75,8 +75,8 @@ Note for Windows 11 Users using VirtualBox:
 -	[Nmap Tutorial to find Network Vulnerabilities (YouTube)](https://youtu.be/4t4kBkMsDbQ?si=EtiqpWknYs2GBDH_)
 -	[Introduction to NMAP for Beginners! (YouTube)](https://youtu.be/NYgDzO8iQJ0?si=NcbmoceDVjTYUAM8)
     - Hint: If you cannot see any port open on this machine from the Kali machine double-check the NAT network
-- (Q4) What's the use case when we need to use -Pn probing option with nmap?
-    - Hint: try nmap google.com
+- (Q4) What's the use case when we need to use `-Pn` probing option with nmap?
+    - Hint: try `nmap google.com`
         - The server is live on the internet, and ready for you to probe even though running above command might tell you differently.
 
 
