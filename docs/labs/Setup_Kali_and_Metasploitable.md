@@ -4,18 +4,17 @@
 You may optionally work with a partner for the labs in this course. Make sure you submit your **own-written** report of your lab, since the lab submission is **individual**.
 
 
-#### **Note For Apple Machines with M series:**
-- Instead of Virtual Machine you must use of of below options:
-    - Download the UTM App
-        - [UTM, Virtual machines for Mac](https://getutm.app/)
-    - Download VMware Fusion Pro
-        - [Link](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html)
+#### Download VMWare Software
+
+- For MacOS: Download VMWare Fusion Pro
+- For Windows: Download VMWare Workstation Pro
+- [https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
 
 ### Instructions
 **Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
 
 - Make sure the VM's network is a NAT network
-- Login to the VM. username: kali password: kali
+- Login to the VM. username: `kali` password: `kali`
 - Explore different tools on Kali Linux.
 - (Q1) How can you find this machine's IP?
 - Change your Kali machine's hostname to a name unique to you:
@@ -38,9 +37,9 @@ sudo nano /etc/hosts
 
 **Metasploitable 2**, is an intentionally vulnerable Ubuntu (64-bit) Linux virtual machine that is designed for testing common vulnerabilities.
 - Download a VM image for metasploitable 2 and set up a VM machine for it
-- (https://sourceforge.net/projects/metasploitable/)[https://sourceforge.net/projects/metasploitable/]
+- [https://sourceforge.net/projects/metasploitable/](https://sourceforge.net/projects/metasploitable/)
 
-Note for MacOS with M series Chip:
+#### Note for MacOS with M series Chip:
 1. Download and Install the HomeBrew
 2. InstallQEMU
 
