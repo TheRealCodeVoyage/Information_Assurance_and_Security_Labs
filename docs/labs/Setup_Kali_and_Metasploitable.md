@@ -4,7 +4,7 @@
 You may optionally work with a partner for the labs in this course. Make sure you submit your **own-written** report of your lab, since the lab submission is **individual**.
 
 
-Note For Apple Machines with M series:
+#### **Note For Apple Machines with M series:**
 - Instead of Virtual Machine you must use of of below options:
     - Download the UTM App
         - [UTM, Virtual machines for Mac](https://getutm.app/)
