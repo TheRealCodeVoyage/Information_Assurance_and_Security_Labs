@@ -10,11 +10,18 @@ You may optionally work with a partner for the labs in this course. Make sure yo
 - For Windows: Download VMWare Workstation Pro
 - [https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
 
+### Create a Virtual Network type NAT
+On the VMWare Pro click on Edit -> Virtual Network Editor.
+- Make the setting editable by clicking on the button on at the bottom right.
+- Add a network 
+- choose the type NAT for the new network.
+
+
 ### Instructions
 **Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
 
-- After Extracting the zip file you can open the Virtual Machine from VMWare and choose the `.vmdk` file and open the Kali Linux
-- Make sure the VM's network is a NAT network
+- After Extracting the zip file you can open the Virtual Machine from VMWare and choose the `.vmx` file and open the Kali Linux
+- Make sure the VM's network is a NAT network. Choose the custom NAT you just created above.
 - Login to the VM. username: `kali` password: `kali`
 - Explore different tools on Kali Linux.
 - (Q1) How can you find this machine's IP?
@@ -65,7 +72,10 @@ Note for Windows 11 Users using VirtualBox:
         vboxmanage modifyvm <uuid|vmname> --acpi off
         vboxmanage modifyvm <uuid|vmname> --ioapic off
         ```
--	Make sure the VM's network is the same NAT network as Kali VM's
+
+---
+
+-	Make sure the VM's network is the same NAT network as Kali VM's, Choose the custom NAT you just created above.
 -	Login to the VM. username: `msfadmin`, password: `msfadmin`
 -	(Q2) How can you find this machine's IP?
     - Note: If you're getting the same IP as the Kali Linux machine you need to change the network to a NAT network
