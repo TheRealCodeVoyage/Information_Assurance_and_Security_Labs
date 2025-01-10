@@ -13,6 +13,7 @@ You may optionally work with a partner for the labs in this course. Make sure yo
 ### Instructions
 **Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
 
+- After Extracting the zip file you can open the Virtual Machine from VMWare and choose the `.vmdk` file and open the Kali Linux
 - Make sure the VM's network is a NAT network
 - Login to the VM. username: `kali` password: `kali`
 - Explore different tools on Kali Linux.
