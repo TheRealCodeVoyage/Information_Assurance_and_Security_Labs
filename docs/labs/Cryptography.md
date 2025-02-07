@@ -4,7 +4,7 @@
 Please do the following tasks on the Kali VM. 
 
 ### Symmetric Cryptography 
-You are given a [ciphertext.txt](files/ciphertext.txt) (right click and select save Link As to download the text file) and asked to decrypt it using openssl enc command; or download with the commnad below:
+You are given a [ciphertext.txt](../files/ciphertext.txt) (right click and select save Link As to download the text file) and asked to decrypt it using openssl enc command; or download with the commnad below:
 
 ```sh 
 curl https://raw.githubusercontent.com/TheRealCodeVoyage/RSA_Encryption_Decryption_Lab/refs/heads/main/ciphertext.txt > ciphertext.txt
