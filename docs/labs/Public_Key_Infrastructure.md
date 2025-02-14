@@ -129,24 +129,24 @@ Redirect permanent / https://<yourdomain>.com
 
 ### Task 5: Launching a Man-In-The-Middle Attack
 
-In this task, we will demonstrate how PKI can prevent Man-In-The-Middle (MITM) attacks. Assume Alice wants to visit `imananoosheh2025.info` via HTTPS. She needs to get the public key from the `imananoosheh2025.info` server. If an attacker can intercept the communication between Alice and the server, the attacker can replace the server’s public key with its own public key. Therefore, Alice’s secret is encrypted with the attacker’s public key, so the attacker will be able to read the secret. The attacker can forward the secret to the server using the server’s public key. The secret is used to encrypt the communication between Alice and server, so the attacker can decrypt the encrypted communication.
+In this task, we will demonstrate how PKI can prevent Man-In-The-Middle (MITM) attacks. Assume Alice wants to visit `example.com` via HTTPS. She needs to get the public key from the `example.com` server. If an attacker can intercept the communication between Alice and the server, the attacker can replace the server’s public key with its own public key. Therefore, Alice’s secret is encrypted with the attacker’s public key, so the attacker will be able to read the secret. The attacker can forward the secret to the server using the server’s public key. The secret is used to encrypt the communication between Alice and server, so the attacker can decrypt the encrypted communication.
 
 ![MIMT Attack](../images/lab6-fig1.png)
 
-In this task, we will emulate an MITM attack and observe how PKI can counteract it. We will select a target website first. In this document, we will use www.`imananoosheh2025.info` as the target.
-In Task 4, we have already set up an HTTPS website. To impersonate www.`imananoosheh2025.info`, follow these steps:
+In this task, we will emulate an MITM attack and observe how PKI can counteract it. We will select a target website first. In this document, we will use `www.example.com` as the target.
+In Task 4, we have already set up an HTTPS website. To impersonate `www.example.com`, follow these steps:
 
 - Add this entry to `/etc/hosts` on the VM:
     ```txt
-    10.9.0.80 www.imananoosheh2025.info
+    10.9.0.80 www.example.com
     ```
 - On the container, navigate to `/etc/apache2/sites-available` and add the following entry in the `mywebsite_apache_ssl.conf` file:
     ```txt
-    ServerAlias www.imananoosheh2025.info
+    ServerAlias www.example.com
     ```
 - Now restart the Apache server.
 
-- (Q12) Explain what warning you will see when navigating to `https://www.imananoosheh2025.info`/ on the VM.
+- (Q12) Explain what warning you will see when navigating to `https://www.example.com`/ on the VM.
 
 
 ### Submission For Lab 6:
