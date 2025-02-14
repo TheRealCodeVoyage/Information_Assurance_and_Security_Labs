@@ -52,7 +52,7 @@ To allow a certificate to have multiple names, the X.509 specification defines e
 1.	**Generate the Server Key and CSR:**
 Run the following command to generate a new RSA private key and a CSR for your server: 
 ```sh
-openssl req -newkey rsa:2048 -sha256 -keyout server.key -out server.csr -subj "/CN=www.imananoosheh2025.info/O=Your Organization/C=CA" -passout pass:dees -addext "subjectAltName = DNS:www.imananoosheh2025.info, DNS: www.iman.ca, DNS:www.iman.io" 
+openssl req -newkey rsa:2048 -sha256 -keyout server.key -out server.csr -subj "/CN=www.example.com/O=Your Organization/C=CA" -passout pass:dees -addext "subjectAltName = DNS:www.example.com, DNS: www.example.ca, DNS:www.example.io" 
 ```
 Note: Replace the domain (iman.info) and Your Organization with your actual server’s name and organization. Also, replace the alternative domains (iman.ca and iman.io) with your alternative domains. 
 
