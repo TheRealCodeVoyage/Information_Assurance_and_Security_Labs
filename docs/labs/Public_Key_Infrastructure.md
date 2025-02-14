@@ -120,7 +120,7 @@ After you started the Apache server and updated the `/etc/hosts` file, try navig
 - Q10. Explain how you can fix this error and provide a screenshot that you can successfully browse the HTTPS website without getting a warning (for the main domain and the alternative domains)
     - Hint: You need to load a certificate to your browser. To manually add a certificate to the Firefox browser, type `about:preferences#privacy` in the address bar, and click the View Certificates button on the page (scroll to the bottom) In the Authorities tab, you will see a list of certificates that are already accepted by Firefox. From here, we can import our own certificates. After choosing the certificate file, please select the following option: “Trust this CA to identify web sites”. You will see that our certificate is now in Firefox’s list of accepted certificates.
 
-- Q11. On the container, navigate to `/etc/apache2/sites-available` and add the following entry to the field for the HTTP connection in `mywebsite_apache_ssl.conf` file that was copied there when you ran the container. Restart the server and provide a screenshot to show that all coming traffic will be directed to the HTTPS version.
+- Q11. On the container, navigate to `/etc/apache2/sites-available` and add the following entry to the field for the **HTTP connection** in `mywebsite_apache_ssl.conf` file that was copied there when you ran the container. Restart the server and provide a screenshot to show that all coming traffic will be directed to the HTTPS version.
 
 ```txt
 Redirect permanent / https://<yourdomain>.com 
