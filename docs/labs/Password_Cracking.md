@@ -34,7 +34,7 @@ While in the previous section attacks were launched over the network, in this se
 First, a dictionary attack will be performed against a password-protected Word document. We will use a tool called Hashcat (already installed in Kali Linux).
 1. Run the following command to get the password-protected Word document:
     ```sh
-    wget https://raw.githubusercontent.com/deargle/security- assignments/master/labs/files/hashcat.doc
+    wget https://raw.githubusercontent.com/deargle/security-assignments/master/labs/files/hashcat.doc
     ```
 2. Now run the following command to get a Python script that extracts the hash of a password-protected Word document. (The hash of the password is stored within the metadata of the document file itself.) `john` in that script's name refers to [JtR, John the Ripper](https://github.com/openwall/john)
     ```sh
@@ -80,7 +80,7 @@ In this section, you’ll see how many hashes you can recover from the 2016 Link
 
 1. Download a copy of 500,000 of these passwords:
     ```sh
-    wget https://raw.githubusercontent.com/deargle/security- assignments/master/labs/files/LinkedIn_HalfMillionHashes.txt
+    wget https://raw.githubusercontent.com/deargle/security-assignments/master/labs/files/LinkedIn_HalfMillionHashes.txt
     ```
 2. Run the following command to perform a "straight" dictionary attack using the `rockyou.txt` wordlist again:
     ```sh
