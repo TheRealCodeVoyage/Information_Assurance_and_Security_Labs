@@ -1,4 +1,4 @@
-# ACIT 4630 – Lab 9 – Sniffing and Spoofing, TCP SYN Flood
+# ACIT 4630 – Lab 10 – Sniffing and Spoofing, TCP SYN Flood
 
 ## Instructions: 
 Please download and unzip Lab setup files into your SEED VM (or Kali VM): 

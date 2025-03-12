@@ -1,4 +1,4 @@
-# ACIT 4630 – Lab 8 – Firewall Exploration
+# ACIT 4630 – Lab 9 – Firewall Exploration
 
 ## Instructions: 
 Please download and unzip [Labsetup-Firewall](../files/Labsetup-Firewall.zip) files in your SEED VM or Kali VM.

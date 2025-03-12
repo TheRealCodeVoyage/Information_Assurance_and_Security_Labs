@@ -1,4 +1,4 @@
-# ACIT 4630 – Lab 7 – Manually Verify an X.509 Certificate
+# ACIT 4630 – Lab 8 – Manually Verify an X.509 Certificate
 
 ## Instructions: 
 When visiting a website, your browser does the verification of the website's public certificate. To better understand the process, we'll do manual verification of the certificate that www.bcit.ca provides. To verify a certificate, we need to verify the Certificate Authority's (CA) signature on it. To verify a digital signature, we need the signer's public key to decrypt the provided signature and compare it with the hash of the signed document. 
