@@ -39,7 +39,7 @@ Extract the following values from the CA's certificate (`c1.pem`) to get its pub
     ```sh
     gcc -o rsa rsa.c -lcrypto
     ```
-- and then run `./rsa` to see the CA's signature decrypted. 
+- and then run `./rsa` to see the CA's signature recovered hash extracted. 
 
 ### Compute the certificate's hash 
 Now we need to extract the body of the server's certificate and compute its hash to compare to the decrypted signature. Since the hash is generated before the signature is computed, we need to exclude the signature block of a certificate when computing the hash. This command will give us that (if you are interested in understanding where this comes from check out this [SEED lab instruction](https://seedsecuritylabs.org/Labs_20.04/Files/Crypto_RSA/Crypto_RSA.pdf):
