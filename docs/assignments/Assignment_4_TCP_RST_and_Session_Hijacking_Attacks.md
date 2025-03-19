@@ -1,6 +1,6 @@
 # Assignment 4 – TCP RST and Session Hijacking Attacks
 
-Please download and unzip [assignment4-setup.zip](../files/Labsetup-TLS.zip) in your SEED VM. Enter the Lab setup folder, and use the `docker-compose.yml` file to set up the lab environment.
+Please download and unzip [assignment4-setup.zip](../files/assignment4-setup.zip) in your SEED VM. Enter the Lab setup folder, and use the `docker-compose.yml` file to set up the lab environment.
 
 To simplify this assignment, we assume that the attacker and the victim are on the same LAN, i.e., the attacker can observe the TCP traffic between other containers.
 
