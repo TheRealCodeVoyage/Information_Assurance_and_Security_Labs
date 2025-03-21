@@ -122,7 +122,7 @@ the `/etc/ufw/before.rules` file. The default rules in .rules files only configu
     # Forward traffic from the <network Range/IP> through <the public network interface>
     -A POSTROUTING -s <network address> -o <public interface> -j MASQUERADE 
     # don't delete the 'COMMIT' line or these rules won't be processed
-    COMMIT 
+    COMMIT
     ```
 - Finally, disable and re-enable ufw to apply the changes: 
     ```sh
