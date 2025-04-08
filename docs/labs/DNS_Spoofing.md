@@ -2,7 +2,7 @@
 
 Please download and unzip Lab setup files in your SEED VM: 
 
-[Labsetup-DNS.zip](files/Labsetup-DNS.zip)
+[Labsetup-DNS.zip](../files/Labsetup-DNS.zip)
 
 Navigate to the folder where the `docker-compose.yml` file is and run `docker-compose up -d` to set up these machines:
 
