@@ -15,16 +15,16 @@ You may optionally work with a partner for the labs in this course. Make sure yo
 
 2. After swithed on expert mode, click on the tools options:
 
-    ![alt text](/docs/images/lab1-fig1.png)
+    ![alt text](../images/lab1-fig1.png)
 
 3. Follow the steps 1 and 2 to create a NAT Network
 
-    ![alt text](/docs/images/lab1-fig2.png)
+    ![alt text](../images/lab1-fig2.png)
 
-    3. In step 3, you can double click on the NAT created to modify if needed.
-    4. Feel free to rename your NAT to `IASNetwork`
-    5. Here we can change the range of clients and sub-network we can later create which we do not change as of now.
-    6. **Important!** make sure DHCP is checked/enabled!
+    1. In step 3, you can double click on the NAT created to modify if needed.
+    2. Feel free to rename your NAT to `IASNetwork`
+    3. Here we can change the range of clients and sub-network we can later create which we do not change as of now.
+    4. **Important!** make sure DHCP is checked/enabled!
 
 ## Install Kali Linux
 
