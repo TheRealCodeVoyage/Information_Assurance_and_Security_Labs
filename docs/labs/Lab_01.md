@@ -4,21 +4,35 @@
 You may optionally work with a partner for the labs in this course. Make sure you submit your **own-written** report of your lab, since the lab submission is **individual**.
 
 
-#### Download VMWare Software
+## Download VirtualBox Software
 
-- For MacOS: Download VMWare Fusion Pro
-- For Windows: Download VMWare Workstation Pro
-- [https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
+- 👉 https://www.virtualbox.org/wiki/Downloads
+
+## Prepare your VirtualBox Environment
 
 ### Create a Virtual Network type NAT
-On the VMWare Pro click on Edit -> Virtual Network Editor.
-- Make the setting editable by clicking on the button on at the bottom right.
-- Add a network 
-- choose the type NAT for the new network.
+1. Initially we need to make sure our VirtualBox is on Expert mode! This could be changed either on the welcome page (the first page that appears) or in preferences, could be toggled from top tabs.
 
+2. After swithed on expert mode, click on the tools options:
+
+    ![alt text](images/lab1-fig1.png)
+
+3. Follow the steps 1 and 2 to create a NAT Network
+
+    ![alt text](images/lab1-fig2.png)
+
+    3. In step 3, you can double click on the NAT created to modify if needed.
+    4. Feel free to rename your NAT to `IASNetwork`
+    5. Here we can change the range of clients and sub-network we can later create which we do not change as of now.
+    6. **Important!** make sure DHCP is checked/enabled! 
+
+## Install Kali Linux
+**Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. 
 
 ### Instructions
-**Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled. Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
+Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
+
+**Note:** If download speed is low, feel free to download via torrent, don't worry it is legal! 😎
 
 - After Extracting the zip file you can open the Virtual Machine from VMWare and choose the `.vmx` file and open the Kali Linux
 - Make sure the VM's network is a NAT network. Choose the custom NAT you just created above.
