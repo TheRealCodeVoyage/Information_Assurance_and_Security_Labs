@@ -163,7 +163,7 @@ Briefly Explain how you get to answer of questions below and include screenshots
 A mysterious message is hidden deep inside the Metasploitable machine.
 Slip in through the front door (you already have the keys), hunt it down, and bring back the exact flag text.
 
-- 🔍 Clue: "The keeper left the **door unlocked**. Find the hidden note in their **quarters** — search for a name that includes `flag`."
+- 🔍 Clue: "The keeper left the **door unlocked**. Find the hidden note in their **quarters** — search for a name that includes `flag`. The flag itself looks like this: `BCIT{ 🚩 }`. Capture the 🚩."
 
 ### Submission For Lab 1
 
