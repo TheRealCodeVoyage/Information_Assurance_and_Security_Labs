@@ -76,7 +76,8 @@ Find Metasploit [(Doc page)](https://www.offsec.com/metasploit-unleashed/introdu
 **Metasploitable 2**, is an intentionally vulnerable Ubuntu (64-bit) Linux virtual machine that is designed for testing common vulnerabilities.
 
 - Download a VM image for metasploitable 2 and set up a VM machine for it
-- [https://sourceforge.net/projects/metasploitable/](https://sourceforge.net/projects/metasploitable/)
+
+- [Download Metasplotable 2 VM Here](https://bcit365-my.sharepoint.com/:u:/g/personal/iman_anooshehpour_bcit_ca/EY4Bw_6nCs5Jv4-rsNCy2JQBqfJSNn5_hEr-zGPwceQQqg?e=XANe8I)
 
 ### [Important for Mac Users] => If you have a Mac which has M series Chip:
 
@@ -145,15 +146,11 @@ Nmap is a network scanner created by Gordon Lyon. Nmap is used to discover hosts
 - [Nmap Tutorial to find Network Vulnerabilities (YouTube)](https://youtu.be/4t4kBkMsDbQ?si=EtiqpWknYs2GBDH_)
 - [Introduction to NMAP for Beginners! (YouTube)](https://youtu.be/NYgDzO8iQJ0?si=NcbmoceDVjTYUAM8)
 
-- (Q4) What's the use case when we need to use `-Pn` probing option with nmap?
-  - Hint: try `nmap google.com`
-    - The server is live on the internet, and ready for you to probe even though running above command might tell you differently.
-
 ### Write-Up
 
-#### When screenshoting a command, make sure texts are clear and your hostname we changed earlier is shown
+**When screenshoting a command, make sure texts are clear and your hostname you changed earlier is shown.**
 
-Briefly Explain how you get to answer of questions below and include screenshots:
+Briefly Explain how you get to answer of questions below and include screenshots. Don't forget your first **Mission!**
 
 - Q1: Find your Kali's and Metasploitable's IP Addresses.
   - Note: If you're getting the same IP as the Kali Linux machine you need to change the network to a NAT network
@@ -162,9 +159,15 @@ Briefly Explain how you get to answer of questions below and include screenshots
   - Please explain which command's flag you used and why?
 - Q3: What's the use case and when we need to use `-Pn` probing option with nmap?
 
+#### 💻 Mission 1 – Infiltrate the Target
+A mysterious message is hidden deep inside the Metasploitable machine.
+Slip in through the front door (you already have the keys), hunt it down, and bring back the exact flag text.
+
+- 🔍 Clue: "The keeper left the **door unlocked**. Find the hidden note in their **quarters** — search for a name that includes `flag`."
+
 ### Submission For Lab 1
 
 - Demonstrate your running VMs above to your instructor.
-- Take screenshots of your running VMs and answers to the questions in the lab.
+- Take screenshots of your running VMs and answers to the questions in the lab + mission 1.
 - Craft a report including the screenshot and your observations and the answers to the questions.
 - Submit your report to the learning hub.
