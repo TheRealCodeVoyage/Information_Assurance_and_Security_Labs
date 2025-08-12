@@ -9,7 +9,7 @@ simulations.
 ## Labs Index:
 
 - [Lab 1: Setup Kali and Metasploitable](./labs/Lab_01.md)
-- [Lab 2: Vulnerability Scanning](./labs/Vulnerability_Scanning.md)
+- [Lab 2: Vulnerability Scanning](./labs/Lab_02.md)
 - [Lab 3: Exploit Metasploitable](./labs/Exploit_Metasploitable.md)
 - [Lab 4: Log Analysis](./labs/Log_Analysis.md)
 - [Lab 5: Cryptography](./labs/Cryptography.md)

