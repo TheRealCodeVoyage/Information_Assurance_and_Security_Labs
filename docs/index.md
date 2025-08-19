@@ -7,7 +7,7 @@ This repository contains lab exercises for BCIT's ACIT 4630 Information Assuranc
 - [Lab 1: Setup Kali and Metasploitable](./labs/Lab_01.md)
 - [Lab 2: Vulnerability Scanning](./labs/Lab_02.md)
 - [Lab 3: Exploit Metasploitable](./labs/Lab_03.md)
-- [Lab 4: Log Analysis](./labs/Log_Analysis.md)
+- [Lab 4: Log Analysis](./labs/Lab_04.md)
 - [Lab 5: Cryptography](./labs/Cryptography.md)
 - [Lab 6: Public Key Infrastructure](./labs/Public_Key_Infrastructure.md)
 - [Lab 7: Password Cracking](./labs/Password_Cracking.md)
