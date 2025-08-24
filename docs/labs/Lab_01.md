@@ -1,15 +1,75 @@
 # ACIT 4630 – Lab 1 – Setup Kali Linux and Metasplotable 2
 
-**Note:**
-You may optionally work with a partner for the labs in this course. Make sure you submit your **own-written** report of your lab, since the lab submission is **individual**.
+> **Note:**
+>
+> * You may optionally work with a partner for the labs in this course.
+> * Lab submissions are **individual**. Write your own report with your screenshots, answers, and observations.
 
-## Download VirtualBox Software
+---
 
-- 👉 [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+## 1. Choose Your Virtualization Software
 
-## Prepare your VirtualBox Environment
+You will run two virtual machines (VMs): **Kali Linux** (attacker) and **Metasploitable 2** (target).
+Which software you use depends on your computer:
 
-### Create a Virtual Network type NAT
+* **Windows / Linux / Intel-based macOS:** Use **VirtualBox**
+
+    👉 [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+* **Mac with Apple Silicon (M1/M2/M3/M4):** Use **UTM**
+
+  👉 [Download UTM](https://mac.getutm.app/)
+
+  ⚠️ VirtualBox does **not** work with Apple Silicon.
+
+---
+
+## 2. Setting Up the Network
+
+Both Kali and Metasploitable **must be** on the same virtual network so they can communicate.
+
+### VirtualBox (Intel/AMD users)
+
+1. Open VirtualBox → **Preferences** → **Network** → Switch to **Expert Mode**.
+
+2. Create a **NAT Network**:
+
+   * Name it `IASNetwork`
+   * Make sure **DHCP is enabled**
+   * Leave the default IP range unchanged
+
+   ![alt text](../images/lab1-fig2.png)
+
+3. Each VM must use this `IASNetwork` as its adapter. (You’ll set this when configuring each VM below.)
+
+---
+
+### UTM (Apple Silicon users)
+
+1. After setting up each VM, **Edit** each VM → **Devices** → **Networks**
+2. Set the **Network Mode** on **Shared Network** (similar to NAT in VirtualBox).
+3. Check **Show Advanced Settings**, Set the **Guest Network** to `10.0.2.0/24`
+    ![UTM Network Setting](../images/lab1_fig2.2.png)
+4. For **Emulated Network Card**, it shouldn't matter which Network Card you choose, but for consistancy choose one Network Card for both VMs.
+5. Ensure **both Kali and Metasploitable VMs are attached to the same Shared Network**.
+
+   * Name the network `IASNetwork` for consistency.
+
+---
+
+## 3. Install Kali Linux
+
+### VirtualBox (Intel/AMD users)
+
+#### Download a Kali VM image (prebuilt `.vbox`)
+
+👉 [Kali Virtual Machines](https://www.kali.org/get-kali/#kali-virtual-machines)
+
+ - **Note:** If download speed is low, feel free to download via torrent, don't worry it is legal! 😎
+
+#### In VirtualBox → **Machine → Add** → select the extracted `.vbox` file.
+
+#### Create a Virtual Network type NAT
 
 1. Initially we need to make sure our VirtualBox is on Expert mode! This could be changed either on the welcome page (the first page that appears) or in preferences, could be toggled from top tabs.
 
@@ -26,11 +86,11 @@ You may optionally work with a partner for the labs in this course. Make sure yo
     5. Here we can change the range of clients and sub-network we can later create which we do not change as of now.
     6. **Important!** make sure DHCP is checked/enabled!
 
-## Install Kali Linux
+#### Install Kali Linux
 
 **Kali Linux** is an advanced penetration testing Linux distribution that comes with lots of security tools preinstalled.
 
-### Instructions
+**Instructions:**
 Download a VM image for Kali Linux and set up a VM machine for it [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
 
 **Note:** If download speed is low, feel free to download via torrent, don't worry it is legal! 😎
@@ -47,6 +107,34 @@ Download a VM image for Kali Linux and set up a VM machine for it [https://www.k
 
 - Choose the custom NAT you just created above. `IASNetwork`
 - Login to the VM. username: `kali` password: `kali`
+
+---
+
+### UTM (Apple Silicon users)
+
+⚠️ Prebuilt Kali VM images **do not work on Apple Silicon**.
+You must install Kali manually.
+
+1. Download the **ARM64 installer ISO**:
+   👉 [Kali Linux ARM64 Installer](https://www.kali.org/get-kali/#kali-bare-metal)
+2. In UTM → Create a new VM:
+
+   * Select **Virtualize → Linux**
+   * Use the downloaded ARM64 ISO
+   * Allocate at least **2 CPU cores** and **4 GB RAM**
+   * Attach to the `IASNetwork` you created
+3. Fixing the black screen issue:
+
+   * Go to the VM’s **Settings** by hitting **Edit** → **Devices**
+   * Add a **Serial** device
+   * Leave the Mode set to **Built-in Terminal**
+   * Save settings and start the VM again
+
+4. Boot and follow the installer prompts.
+
+   * Set your own username/password.
+
+---
 
 ## Post Kali Installation
 
@@ -71,6 +159,8 @@ sudo nano /etc/hosts
 
 Find Metasploit [(Doc page)](https://www.offsec.com/metasploit-unleashed/introduction/) and run it from the Applications menu. You should see `msfconsole` open. Almost all of your interaction with Metasploit will be through its many modules, which we explore more next week.
 
+---
+
 ## Install Metasploitable 2 Virtual Machine
 
 **Metasploitable 2**, is an intentionally vulnerable Ubuntu (64-bit) Linux virtual machine that is designed for testing common vulnerabilities.
@@ -79,7 +169,9 @@ Find Metasploit [(Doc page)](https://www.offsec.com/metasploit-unleashed/introdu
 
 - [Download Metasplotable 2 VM Here](https://bcit365-my.sharepoint.com/:u:/g/personal/iman_anooshehpour_bcit_ca/EY4Bw_6nCs5Jv4-rsNCy2JQBqfJSNn5_hEr-zGPwceQQqg?e=XANe8I)
 
-### [Important for Mac Users] => If you have a Mac which has M series Chip:
+### Install Metasploitable 2 (Apple Silicon users)
+
+[Important for Mac Users] => If you have a Mac which has M series Chip:
 
 **If you don't have a Mac with M Series Chip, you should skip this section and start from Metasploitable 2 Installation**
 
@@ -95,21 +187,10 @@ since you CPU architecture is different (arm64) in compare to others (which most
 3. Convert the .vdmk file to .QCOW2 (QEMU Image)
 
     ```sh
-    qemu-img convert -f vmdk -O qcow2 vmName.vmdk vmName.qcow2
+    qemu-img convert -f vmdk -O qcow2 Metasploitable.vmdk Metasploitable.qcow2
     ```
 
 4. Load the .QCOW2 file to UTM App
-
-Note for Windows 11 Users using VirtualBox:
-
-- You might face a Kernel Panic with Metasploitable 2; here are steps for workaround:
-  - Turn of the MetaSploitable 2 VM machine
-  - Run below commands in the PowerShell:
-
-    ```powershell
-    vboxmanage modifyvm <uuid|vmname> --acpi off
-    vboxmanage modifyvm <uuid|vmname> --ioapic off
-    ```
 
 ---
 
@@ -132,21 +213,33 @@ This is installation might be a little tricky! but don't worry i got you covered
 
 5. Again we need to make sure the NAT is configured correctly. You need to configure it using the Metasploitable VM's Setting similar to how we configred in Kali VM.
 6. Now, You can launch the Metasploitable VM and log into it.
+
+    - **Note for Windows 11 Users using VirtualBox:**
+
+    - You might face a **Kernel Panic** with Metasploitable 2; **If you did !** here are steps for workaround:
+      - Turn off the MetaSploitable 2 VM machine
+      - Run below commands in the PowerShell:
+
+        ```powershell
+        vboxmanage modifyvm <uuid|vmname> --acpi off
+        vboxmanage modifyvm <uuid|vmname> --ioapic off
+        ```
+
 7. Login to the VM. username: `msfadmin`, password: `msfadmin`
 
-### NMAP -  A Reconnaissance Tool
+## NMAP -  A Reconnaissance Tool
 
 Nmap is a network scanner created by Gordon Lyon. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses. Nmap provides a number of features for probing computer networks, including host discovery and service and operating system detection.
 
 ![nmap-cheatsheet.jpg](../images/nmap-cheatsheet.jpg)
 
-#### More NMAP Resources
+### More NMAP Resources
 
 - [https://nmap.org/book/man.html](https://nmap.org/book/man.html)
 - [Nmap Tutorial to find Network Vulnerabilities (YouTube)](https://youtu.be/4t4kBkMsDbQ?si=EtiqpWknYs2GBDH_)
 - [Introduction to NMAP for Beginners! (YouTube)](https://youtu.be/NYgDzO8iQJ0?si=NcbmoceDVjTYUAM8)
 
-### Write-Up
+## Write-Up
 
 **When screenshoting a command, make sure texts are clear and your hostname you changed earlier is shown.**
 
@@ -159,8 +252,9 @@ Briefly Explain how you get to answer of questions below and include screenshots
   - Please explain which command's flag you used and why?
 - Q3: What's the use case and when we need to use `-Pn` probing option with nmap?
 
-#### 💻 Mission 1 – Infiltrate the Target
-A mysterious message is hidden deep inside the Metasploitable machine.
+### 💻 Mission 1 – Infiltrate the Target
+
+>A mysterious message is hidden deep inside the Metasploitable machine.
 Slip in through the front door (you already have the keys), hunt it down, and bring back the exact flag text.
 
 - 🔍 Clue: "The keeper left the **door unlocked**. Find the hidden note in their **quarters** — search for a name that includes `flag`. The flag itself looks like this: `BCIT{ 🚩 }`. Capture the 🚩."
