@@ -102,6 +102,12 @@ You must install Kali manually.
 
    * Set your own username/password.
 
+5. After first boot up, login with username/password you set, and run the command below: (this insures your clipboard sharing capability between your host and guest machines)
+
+    ```
+    sudo apt update && sudo apt install spice-vdagent
+    ```
+
 ---
 
 ## Post Kali Installation
