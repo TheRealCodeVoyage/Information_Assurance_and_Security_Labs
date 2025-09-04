@@ -135,7 +135,7 @@ Find Metasploit [(Doc page)](https://www.offsec.com/metasploit-unleashed/introdu
 
 Download a VM image for metasploitable 2 and set up a VM machine for it
 
-👉 [Download Metasplotable 2 VM](https://bcit365-my.sharepoint.com/:u:/g/personal/iman_anooshehpour_bcit_ca/EY4Bw_6nCs5Jv4-rsNCy2JQBqfJSNn5_hEr-zGPwceQQqg?e=XANe8I)
+👉 [Download Metasplotable 2 VM](https://bcit365-my.sharepoint.com/:u:/g/personal/iman_anooshehpour_bcit_ca/ETZoOLzTSmlBgjJ_wnDc51ABBrEQXteBO1zRnGtt7ANHTg?e=7FaZ4t)
 
 ### Install Metasploitable 2 (on UTM | Apple Silicon users)
 
