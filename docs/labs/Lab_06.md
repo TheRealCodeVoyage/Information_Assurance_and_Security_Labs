@@ -1,7 +1,7 @@
 # ACIT 4630 – Lab 6 – Public Key Infrastructure (PKI)
 
-NOTE: This lab will be done on Kali Linux
-The instructions are adapted from [seedsecuritylabs.org](https://seedsecuritylabs.org/Labs_20.04/Files/Crypto_PKI/Crypto_PKI.pdf)
+>NOTE: This lab will be done on Kali Linux.
+>The instructions are adapted from [seedsecuritylabs.org](https://seedsecuritylabs.org/Labs_20.04/Files/Crypto_PKI/Crypto_PKI.pdf)
 
 ## Instructions: 
 Public key cryptography is the foundation of today's secure communication, but it is subject to man-in-the-middle attacks when one side of communication sends its public key to the other side. The fundamental problem is that there is no easy way to verify the ownership of a public key, i.e., given a public key and its claimed owner information, how do we ensure that the public key is indeed owned by the claimed owner? The Public Key Infrastructure (PKI) is a practical solution to this problem. 
@@ -88,7 +88,12 @@ Use the following command to print out the X509 certificate issued for our webse
 ### Task 4: Deploying Certificate in an Apache-Based HTTPS Website 
 In this task, we will explore how public-key certificates are utilized by websites to secure web browsing. We will set up an HTTPS website using Nginx, which is installed directly on Kali Linux. To create an HTTPS website, we need to configure Nginx to specify the locations of the private key and certificate.
 
-Container Setup and Commands. Please **download**, unzip, and enter the [Labsetup](../files/Labsetup-PKI.zip), and use the `docker-compose.yml` file to set up the lab environment. Navigate to `image_www` directory and do the following:
+Container Setup and Commands.
+
+```sh
+sudo apt install docker.io docker-compose -y
+```
+Please **download**, unzip, and enter the [Labsetup](../files/Labsetup-PKI.zip), and use the `docker-compose.yml` file to set up the lab environment. Navigate to `image_www` directory and do the following:
 - Copy your webserver's key and certificate (originated in Task 3 and 4) to the cert directory.
 - Update the `mywebsite_apache_ssl.conf` and add your webserver domains and alternate names (to `ServerName` and `ServerAlias`) in both `:443` and `:80` entries.
 - **Note**: The SSLEngine, SSLCertificateFile, SSLCertificateKeyFile directives don't mean
@@ -96,7 +101,7 @@ that we are using the SSL protocol. We could choose what protocol our server is 
 
 Now navigate to the directory containing the `docker-compose.yml` file and run the following command to set up the container.
 ```sh
-docker-compose up -d
+sudo docker-compose up -d
 ```
 The Apache server is not automatically started in the container, because of the need to type the password to unlock the server's private key. You need to get a shell in the container and run the following commands to start, stop, or restart the server:
 ```sh
