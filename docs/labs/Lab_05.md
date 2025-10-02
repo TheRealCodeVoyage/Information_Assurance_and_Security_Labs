@@ -20,7 +20,7 @@ Your mission:
 You are given a [ciphertext.txt](../files/ciphertext.txt) (right click and select save Link As to download the text file) and asked to decrypt it using openssl enc command; or download with the commnad below:
 
 ```sh
-curl 'https://raw.githubusercontent.com/TheRealCodeVoyage/RSA_Encryption_Decryption_Lab/refs/heads/main/ciphertext.txt' > ciphertext.txt
+curl 'https://codevoyage.dev/Information_Assurance_and_Security_Labs/files/ciphertext.txt' > ciphertext.txt
 ```
 
 Type `openssl enc --help` on the terminal to see how you should use this command. Here's some of the info you need:
