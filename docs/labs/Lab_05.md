@@ -126,6 +126,12 @@ S=
 D96BE0AE035D94A7C88BA0FE518589717415CCBF880A1172BA48E2D014C5F0C8
 ```
 
+We can generate the hash of the Bob's message using the command below:
+
+```sh
+echo "Launch a missile." | sha256sum
+```
+
 To compare 2 strings (one maybe in lowercase) in terminal you can use one of the below commands:
 In Python:
 
