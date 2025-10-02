@@ -94,7 +94,7 @@ A ciphertext has already been delivered to Alice. Decrypt the ciphertext `c` wit
 
 ```plaintext
 C= 
-B756F5830D0277112742F3251481639DCE87CCBFBD84EC2970AB9E03313C7837
+4ACE829A221D3673A0DF07392EEC479861D35D17DA73C1ACA2BE72D9AE02CD24
 ```
 
 - Q7. What's the message in plain text?
