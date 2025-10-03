@@ -51,7 +51,7 @@ sudo apt install libssl-dev
 You need to download [rsa.c code](../files/rsa.c) on the VM and uncomment and **replace different parts of it in each of the following tasks below** or download it using the command below:
 
 ```sh
-curl 'https://github.com/TheRealCodeVoyage/Information_Assurance_and_Security_Labs/raw/refs/heads/main/docs/files/rsa.c' > rsa.c
+curl 'https://codevoyage.dev/Information_Assurance_and_Security_Labs/files/rsa.c' > rsa.c
 ```
 
 After **each change**, to compile the code, run the following command in the folder where the code is:
