@@ -9,7 +9,7 @@ This repository contains lab exercises for BCIT's ACIT 4630 Information Assuranc
 - [Lab 3: Exploit Metasploitable](./labs/Lab_03.md)
 - [Lab 4: Log Analysis](./labs/Lab_04.md)
 - [Lab 5: Cryptography](./labs/Lab_05.md)
-- [Lab 6: Public Key Infrastructure](./labs/Public_Key_Infrastructure.md)
+- [Lab 6: Public Key Infrastructure](./labs/Lab_06.md)
 - [Lab 7: Password Cracking](./labs/Password_Cracking.md)
 - [Lab 8: Manually Verifying X.509 Certificate](./labs/Manually_Verifying_X509_Certificate.md)
 - [Lab 9: Firewall Exploration](./labs/Firewall_Exploration.md)
