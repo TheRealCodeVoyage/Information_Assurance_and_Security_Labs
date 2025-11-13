@@ -2,7 +2,15 @@
 
 TLS, Transport Layer Security, is a standard that allows different applications to communicate with one another securely through the internet. Most web servers these days are using HTTPS, which is built on top of TLS. 
 
-Please download and unzip [Labsetup-TLS.zip](../files/Labsetup-TLS.zip) files in your SEED VM (Or Kali). Enter the Labsetup-TLS folder, and use the `docker-compose.yml` file to set up the lab environment. 
+Please download and unzip [Labsetup-TLS.zip](../files/Labsetup-TLS.zip) files in your SEED VM (Or Kali). 
+
+Enter the the unzipped folder
+
+>**Only for Apple Silicon Users:**
+>Edit the `docker-compose.yml` file and replace the docker image tag from `medium` to `small-arm` as below:
+> `handsonsecurity/seed-ubuntu:medium` -> `handsonsecurity/seed-ubuntu:small-arm`
+
+Use the `docker-compose.yml` file to set up the lab environment. 
 
 Take screenshots of your code snippets and important results and explain what you see. 
 
