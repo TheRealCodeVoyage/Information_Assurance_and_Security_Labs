@@ -63,6 +63,11 @@ Q4. If we only get one certificate after running the following command, what doe
 openssl s_client -showcerts -connect www.bcit.ca:443
 ```
 
+*(Hint: for an example, try looking through the certificate in the following command)*
+```sh
+openssl s_client -showcerts -connect $(echo "c2VsZi1zaWduZWQuYmFkc3NsLmNvbQ==" | base64 --decode):443
+```
+
 ### Submission For Lab 8:
 - Create a report answering any questions in the lab above and including any required screenshots.
 - Submit your report to the Learning Hub in PDF format.
